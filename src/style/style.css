@@ -1,0 +1,136 @@
+@import url(./reset.css);
+@import url(./header.css);
+
+body {
+  background-color: #222222;
+}
+
+/* content(main) */
+.container-content {
+  position: relative;
+}
+
+/* ul */
+.list-items {
+  padding: 100px 50px;
+  margin: 0 auto;
+  width: 775px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 가운데 중심 축 */
+.list-items::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 3px;
+  border-right: 3px solid #2196f3;
+  margin: 12rem auto -1rem;
+}
+
+/* li:before : 중심축 가운데 동그란 원 */
+.item:before {
+  content: "";
+  margin: auto 0;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  border: 3px solid #2196f3;
+  border-radius: 50%;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: -47px;
+  background-color: #262626;
+}
+
+.list-items > .item:nth-child(2n)::before {
+  left: -45px;
+}
+
+/* 포토샵 정보를 나타내는 박스 */
+.list-items > .item {
+  padding: 20px 20px 0 20px;
+  position: relative;
+  box-sizing: border-box;
+  width: 350px;
+  background: #111111;
+  border-radius: 10px;
+}
+
+.list-items > .item:nth-child(2n) {
+  margin-left: auto;
+}
+
+.list-items > .item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  bottom: 0;
+  right: -10px;
+  margin: auto 0;
+  background-color: #111111;
+  transform: rotate(45deg);
+}
+
+.list-items > .item:nth-child(2n):after {
+  left: -10px;
+}
+
+.item > img {
+  width: 80px;
+  margin-top: -60px;
+}
+
+.item:nth-child(2n) > img {
+  margin-left: auto;
+  display: block;
+}
+
+.item > p {
+  font-weight: bold;
+  color: white;
+}
+
+.item:nth-child(2n + 1) > p {
+  text-align: right;
+}
+
+.item > p:first-of-type {
+  margin-top: -20px;
+  font-size: 60px;
+  color: #2196f3;
+}
+
+.item > .list-desc {
+  position: relative;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 10px 10px 0 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.item > .list-desc > li::before {
+  margin-right: 10px;
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #111111;
+  border-radius: 50%;
+}
+
+.item > .list-desc > li {
+  color: gray;
+}
+
+.item > .list-desc > li + li {
+  margin-top: 5px;
+}
